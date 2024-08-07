@@ -16,3 +16,11 @@ git clone https://github.com/timyers/winterPlots
 ```
 
 <br>
+
+## Reproducibility
+
+- `winterPlots` uses the `R` package [`renv`](https://rstudio.github.io/renv/index.html) to create a reproducible environment.  It records the exact package versions `winterPlots` depends on in a lockfile, *renv.lock*, and ensures those exact versions get installed.
+
+- After installation, when you open the project `renv` should automatically bootstrap itself, downloading and installing the appropriate version of `renv`.  It should also ask if you want to download and install all the packages `winterPlots` needs by running `renv::restore()`.
+
+  - **NOTE:** The `renv` package tracks but does not help with the version of `R` used (the version of `R` used can be found in the `renv.lock` file).  `renv` can't help with this because it runs inside of `R`.  However, there are other tools that can help.  Tools like [The R Installation Manager or `rig`](https://github.com/r-lib/rig) can help with switching between multiple versions of `R` on one computer.
