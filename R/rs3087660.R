@@ -1,3 +1,7 @@
+# rs3087660
+# hg19 used because Leandro's data from 2019
+# was generated using that build
+
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("plotgardener")
