@@ -28,7 +28,7 @@ rs3087660_achn <- read.table("data/captureC/ACHN/washU.chr15.rs3087660")
 
 # Create page
 pageCreate(width = 6.5, height = 8.0,
-           showGuides = TRUE,
+           showGuides = FALSE,
            default.units = "inches")
 
 # Set the coordinates
@@ -134,7 +134,7 @@ legendPlot <- plotLegend(legend = c("HEK293T", "ACHN"),
                          fill = c("blue", "red"),
                          fontsize = 8,
                          border = FALSE,
-                         x = 5.25, y = 1.5,
+                         x = 4.75, y = 1.5,
                          width = 1.3, height = 0.5,
                          just = c("left", "top"),
                          default.units = "inches"
