@@ -202,23 +202,28 @@ plotText(label = "SNP",
 ## Plot signal track
 # Read in chip-atlas file for chr15
 ########## hg38 -> need to convert to hg19 ##########
-file_path <- "data/chip-atlas/subset_chr15_parsed_Histone.Kidney.100.H3K27ac.AllCell.bed.txt"
+# file_path <- "data/chip-atlas/subset_chr15_hg19_parsed_Histone.Kidney.100.H3K27ac.AllCell.bed.txt"
+# file above did not work. error msg about not allowing overlaps?
+
+# original encode url https://www.encodeproject.org/experiments/ENCSR000DTU/
+file_path <- "/Users/myersta/Downloads/encode_file.bed" # this worked
 df_bed <- data.table::fread(file_path, sep = "\t", header = TRUE)
 
 # Plot signal track
 plotSignal(
   data = df_bed,
-  chrom = "chr15",
-  chromstart = 66395000,
+  params = params,
+  # chrom = "chr15",
+  # chromstart = 66395000,
   # chromend = 67050000,
-  chromend = 67060000,
+  # chromend = 67060000,
   # chrom = "chr21", chromstart = 28000000, chromend = 30300000,
-  assembly = "hg38",
-  x = 0.5, y = 2.75, width = 2, height = 0.5,
+  # assembly = "hg19",
+  x = 0.5, y = 5.75, width = 5.25, height = 0.5,
   just = c("left", "top"), default.units = "inches"
 )
 
 ## Hide page guides
-# pageGuideHide()
+pageGuideHide()
 pageGuideShow()
 
