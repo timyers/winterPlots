@@ -133,15 +133,15 @@ annoZoomLines(
 )
 
 # Add legend plot
-legendPlot <- plotLegend(legend = c("HEK293T", "ACHN"),
-                         fill = c("blue", "red"),
-                         fontsize = 8,
-                         border = FALSE,
-                         x = 4.75, y = 1.5,
-                         width = 1.3, height = 0.5,
-                         just = c("left", "top"),
-                         default.units = "inches"
-                        )
+# legendPlot <- plotLegend(legend = c("HEK293T", "ACHN"),
+#                          fill = c("blue", "red"),
+#                          fontsize = 8,
+#                          border = FALSE,
+#                          x = 4.75, y = 1.5,
+#                          width = 1.3, height = 0.5,
+#                          just = c("left", "top"),
+#                          default.units = "inches"
+#                         )
 
 ## Plot gene track
 # rs3087660
