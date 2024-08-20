@@ -77,7 +77,8 @@ file_path <- "data/chip-atlas/subset_chr15_hg38_parsed_Histone.Kidney.100.H3K27a
 file_path <- "data/chip-atlas/filtered_chip-atlas_H3K27ac_HEK293T_hg38.bed"
 # Orr
 file_path <- "data/chip-atlas/filtered_chip-atlas_H3K27ac_ACHN_hg38.bed"
-# read file
+
+#### read file
 df_bed <- data.table::fread(file_path, sep = "\t", header = TRUE)
 
 # call helper function to check for correct column names
@@ -101,8 +102,8 @@ chip_file_path <- file_path <- "data/chip-atlas/"
 full_file_name <- paste0(chip_file_path,
                          "filtered_chip-atlas_",
                          "H3K27ac_",
-                         # "HEK293T_",
-                         "ACHN_",
+                         "HEK293T_",
+                         # "ACHN_",
                          "hg19",
                          ".bed"
                          )
