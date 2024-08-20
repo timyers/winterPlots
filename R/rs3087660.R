@@ -31,7 +31,7 @@ rs3087660_achn <- read.table("data/captureC/ACHN/washU.chr15.rs3087660")
 
 # Create page
 pageCreate(width = 6.5, height = 8.0,
-           showGuides = FALSE,
+           showGuides = TRUE,
            default.units = "inches")
 
 # Set the coordinates
@@ -206,6 +206,10 @@ plotText(label = "SNP",
 # file above did not work. error msg about not allowing overlaps?
 
 # original encode url https://www.encodeproject.org/experiments/ENCSR000DTU/
+# filter by hg19 and bigwig files;
+# downloaded bigwig file ENCFF110KNX.bigwig (signal p-value, 
+# isogenic replicate #1, hg19) and converted to .bed file using 
+# script `bitwig_to_bed.R`
 file_path <- "/Users/myersta/Downloads/encode_file.bed" # this worked
 df_bed <- data.table::fread(file_path, sep = "\t", header = TRUE)
 
@@ -219,7 +223,8 @@ plotSignal(
   # chromend = 67060000,
   # chrom = "chr21", chromstart = 28000000, chromend = 30300000,
   # assembly = "hg19",
-  x = 0.5, y = 5.75, width = 5.25, height = 0.5,
+  x = 0.75, y = 4.75, 
+  width = 5.25, height = 0.5,
   just = c("left", "top"), default.units = "inches"
 )
 
