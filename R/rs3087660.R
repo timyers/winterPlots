@@ -165,39 +165,6 @@ plotText(label = "Genes",
          y = 4
         ) 
 
-## Add SNP track
-# SNP rs3087660 data
-snp_data <- data.frame(chr = "chr1",
-                       start = 66797492,
-                       end = 66797492,
-                       snp_id = "rs3087660"
-                      )
-# chr15 - rs3087660
-snp_region <- pgParams(chrom = "chr15", 
-                       chromstart = 66794000,
-                       # chromstart = 66796492,
-                       chromend = 66797492)
-annoHighlight(
-  plot = genePlot, params = snp_region,
-  fill = "gray36",
-  y = 3.25, height = 1.35, just = c("left", "top"), default.units = "inches"
-)
-
-# Add SNP rsID label
-plotText(label = "rs3087660",
-         fontsize = 7,
-         x = 3.85,
-         y = 4.655
-)
-
-# Add label for SNP track
-plotText(label = "SNP",
-         fontsize = 11,
-         fontface = "bold",
-         rot = 90,
-         x = 0.25,
-         y = 4.625
-        )
 
 ## Plot signal track
 # Read in chip-atlas file for chr15
@@ -223,9 +190,61 @@ plotSignal(
   # chromend = 67060000,
   # chrom = "chr21", chromstart = 28000000, chromend = 30300000,
   # assembly = "hg19",
-  x = 0.75, y = 4.75, 
+  x = 0.75, y = 4.655, 
   width = 5.25, height = 0.5,
   just = c("left", "top"), default.units = "inches"
+)
+
+# Add label for Encode track
+plotText(label = "Encode",
+         fontsize = 11,
+         fontface = "bold",
+         rot = 90,
+         x = 0.25,
+         y = 4.9
+        )
+
+# Add sub-label for Encode track
+plotText(label = "H3K4me3",
+         fontsize = 8,
+         fontface = "bold",
+         rot = 90,
+         x = 0.375,
+         y = 4.9
+) 
+
+## Add SNP track
+# SNP rs3087660 data
+snp_data <- data.frame(chr = "chr1",
+                       start = 66797492,
+                       end = 66797492,
+                       snp_id = "rs3087660"
+)
+# chr15 - rs3087660
+snp_region <- pgParams(chrom = "chr15", 
+                       chromstart = 66794000,
+                       # chromstart = 66796492,
+                       chromend = 66797492)
+annoHighlight(
+  plot = genePlot, params = snp_region,
+  fill = "gray36",
+  y = 3.25, height = 2.70, just = c("left", "top"), default.units = "inches"
+)
+
+# Add SNP rsID label
+plotText(label = "rs3087660",
+         fontsize = 7,
+         x = 3.85,
+         y = 6.02
+)
+
+# Add label for SNP track
+plotText(label = "SNP",
+         fontsize = 11,
+         fontface = "bold",
+         rot = 90,
+         x = 0.25,
+         y = 6.0
 )
 
 ## Hide page guides
