@@ -206,11 +206,11 @@ plotText(label = "SNP",
 # file above did not work. error msg about not allowing overlaps?
 
 # original encode url https://www.encodeproject.org/experiments/ENCSR000DTU/
-# filter by hg19 and bigwig files;
+# H3K4me3, HEK293, filter by hg19 and bigwig files;
 # downloaded bigwig file ENCFF110KNX.bigwig (signal p-value, 
 # isogenic replicate #1, hg19) and converted to .bed file using 
 # script `bitwig_to_bed.R`
-file_path <- "/Users/myersta/Downloads/encode_file.bed" # this worked
+file_path <- "data/encode/encode_H3K4me3_HEK293_hg19_ENCFF110KNX.bed" # this worked
 df_bed <- data.table::fread(file_path, sep = "\t", header = TRUE)
 
 # Plot signal track
