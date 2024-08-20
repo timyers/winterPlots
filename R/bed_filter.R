@@ -1,7 +1,8 @@
-# Description:  filters parsed ChIP-Atlas bed file from
+# Description:  filters parsed ChIP-Atlas bed file (hg38) from
 # my `UpSetToolkit` project by chromosome and cell type
 # for use as input for signal track in project 
-# `winterPlots`.
+# `winterPlots`.  Output file may need to be converted
+# to hg19 using script `bed_liftoverR.R`
 
 # Load the necessary library
 library(readr)
@@ -12,7 +13,7 @@ library(dplyr)
 chip_atlas_assay <- "H3K27ac"
 
 # set genome build
-genome_build <- "hg19"
+genome_build <- "hg38" # chip-atlas data was downloaded with hg38 coordinates
 
 # define parsed ChIP-Atlas .bed file to filter
 # this file includes data from multiple cell lines
